@@ -3,6 +3,7 @@ const apiKey = `bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI4ZWUx
 
 const addresBarContent = new URLSearchParams(location.search);
 //url searchparams cerca i parametry e location.search e la barra di ricerca
+const eventId = addresBarContent.get(`_id`);
 
 const generateEventDetails = function (events) {
   const col = document.createElement(`div`);
@@ -17,7 +18,7 @@ const generateEventDetails = function (events) {
         <div class="card-body position-relative ">
       <h3 class="mb-4" id="title" class="card-title">${events.name}</h3>
       <p id="description" class="card-text">${events.description}</p>
-      <a href="./Back-Office.html?_id=${events._id}" class="btn btn-primary">MODIFICA</a>
+      <a href="./Back-Office.html?_id=${eventId}" class="btn btn-primary">MODIFICA</a>
       <button type="button" onclick="deleteEvent()" class="my-3 btn btn-primary">ELIMINA</button>
         <div class="position-absolute bottom-0 end-0 mb-2 me-2">
       
@@ -29,7 +30,6 @@ const generateEventDetails = function (events) {
   rowPosition.appendChild(col);
 };
 
-const eventId = addresBarContent.get(`_id`);
 console.log(eventId);
 const getDetails = function () {
   fetch(`https://striveschool-api.herokuapp.com/api/product/${eventId}`, {
@@ -51,6 +51,8 @@ const getDetails = function () {
 getDetails();
 
 const deleteEvent = () => {
+  // BootstrapDialog.confirm("Are you sure you want to do this?");
+
   fetch(`https://striveschool-api.herokuapp.com/api/product/${eventId}`, {
     method: `DELETE`,
     headers: {

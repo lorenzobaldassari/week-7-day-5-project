@@ -11,27 +11,34 @@ const imgURL1 = document.getElementById(`imgURL`);
 const price1 = document.getElementById(`price`);
 const addresBarContent = new URLSearchParams(location.search);
 const eventId = addresBarContent.get(`_id`);
+
 if (eventId) {
   fetch(`https://striveschool-api.herokuapp.com/api/product/${eventId}`, {
-    method:`PUT`,
+    method: `PUT`,
     headers: {
       Authorization: apiKey,
     },
+  }).then ((res)=>{
+     return res.json(); 
   })
-    .then((eventDetails) => {
-     console.log(eventDetails)
-      name1.value = eventDetails.name;
-      description1.value = eventDetails.description;
-      price1.value = eventDetails.price;
-      imgURL1.value= eventDetails.imageUrl;
-      brand1.value= eventDetails.imageUrl;
+    .then((res) => {
+      // const brand1 = document.getElementById(`brand`);
+      // const name1 = document.getElementById(`name`);
+      // const description1 = document.getElementById(`description`);
+      // const imgURL1 = document.getElementById(`imgURL`);
+      // const price1 = document.getElementById(`price`);
+      console.log(res);
+      name1.value = res.name;
+      description1.value = res.description;
+      price1.value = res.price;
+      imgURL1.value = res.imageUrl;
+      brand1.value = res.brand;
     })
 
     .catch((err) => {
       console.log(err, `errore`);
     });
 }
-
 
 button.addEventListener(`click`, function (e) {
   e.preventDefault();
