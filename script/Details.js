@@ -14,7 +14,7 @@ const generateEventDetails = function (events) {
   col.classList.add(`rounded-1`);
   col.innerHTML = `<div class="card box m-0 p-0 bg-secondary " onclick="settings()">
         <img id="cardimage" src="${events.imageUrl}" class="card-img-top w-100" alt="...">
-        <h6 id="brand class"bg-warning" class="text-center mt-2 mb-4"> ${events.brand}</h6>
+        <h6 id="brand class"bg-warning" class="text-center mt-2 mb-4 ${events.brand}"> ${events.brand}</h6>
         <div class="card-body position-relative ">
       <h3 class="mb-4" id="title" class="card-title">${events.name}</h3>
       <p id="description" class="card-text">${events.description}</p>

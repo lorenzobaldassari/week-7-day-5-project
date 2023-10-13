@@ -14,3 +14,24 @@
 /* .rowPosition {
   height: 500px !important;
 } */
+.XBOX {
+  background-color: green;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+.PLAYSTATION {
+  color: white;
+  background-color:blue;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+.STEAM {
+  background-color: rgb(6, 6, 66);
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
