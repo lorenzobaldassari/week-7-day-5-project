@@ -1,0 +1,52 @@
+@media screen and (max-width : 576px) {
+  /* .box {
+    height: 750px !important;
+    
+  } */
+  .imgBox {
+    height: 500px !important;
+  }
+}
+
+@media screen and (min-width:576px) {
+  .box {
+    height: 630px !important;
+  }
+  .imgBox {
+    height: 350px !important;
+    
+  }
+}
+
+@media screen and (min-Width:768px) {
+  .box {
+    height: 630px !important;
+  }
+  .imgBox {
+    height: 300px !important;
+  }
+
+}
+@media screen and (min-Width:992px) {
+
+
+
+}
+@media screen and (min-Width:1200px) {
+  .box {
+    height: 650px !important;
+  }
+  .imgBox {
+    height: 300px !important;
+  }
+}
+ body{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ud6VxStjD21qdm-oZIyj1I2298v6DjZH3Q&usqp=CAU)!important;
+  /* color: yellow; */
+ }
+
+ .hover:hover{
+  transform: scale(1.2);
+  z-index: 2;
+  border: 4px solid rgb(201, 173, 14);
+ }  
