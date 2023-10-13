@@ -40,15 +40,17 @@ if (eventId) {
       console.log(err, `errore`);
     });
 }
-
+let msg;
 let method;
 let id;
 if (eventId) {
   method = `PUT`;
   id = eventId;
+  msg = `elemento modificato correttamente`;
 } else {
   method = `POST`;
   id = ``;
+  msg = `elemento salvato correttamente`;
 }
 console.log(method);
 console.log(id);
@@ -61,7 +63,7 @@ button.addEventListener(`click`, function (e) {
     imageUrl: imgURL1.value,
     price: price1.value,
   };
-  console.log(obj);
+  // console.log(obj);
 
   // inizio fetch
   fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
@@ -72,14 +74,14 @@ button.addEventListener(`click`, function (e) {
     .then((events) => {
       console.log(`oggetto inviato`, events);
       if (events.ok) {
-        alert(`evento salvato correttamente`);
+        alert(msg);
         name1.value = ``;
         brand1.value = ``;
         imgURL1.value = ``;
         price.value = ``;
         description1.value = ``;
       } else {
-        alert(`errore nel salvataggio dell'evento`);
+        alert(`errore`);
         throw new errore(`errore nel post`);
       }
     })
