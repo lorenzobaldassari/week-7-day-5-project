@@ -14,13 +14,14 @@ const eventId = addresBarContent.get(`_id`);
 
 if (eventId) {
   fetch(`https://striveschool-api.herokuapp.com/api/product/${eventId}`, {
-    method: `PUT`,
+    method: `GET`,
     headers: {
       Authorization: apiKey,
     },
-  }).then ((res)=>{
-     return res.json(); 
   })
+    .then((res) => {
+      return res.json();
+    })
     .then((res) => {
       // const brand1 = document.getElementById(`brand`);
       // const name1 = document.getElementById(`name`);
@@ -40,6 +41,17 @@ if (eventId) {
     });
 }
 
+let method;
+let id;
+if (eventId) {
+  method = `PUT`;
+  id = eventId;
+} else {
+  method = `POST`;
+  id = ``;
+}
+console.log(method);
+console.log(id);
 button.addEventListener(`click`, function (e) {
   e.preventDefault();
   const obj = {
@@ -52,8 +64,8 @@ button.addEventListener(`click`, function (e) {
   console.log(obj);
 
   // inizio fetch
-  fetch(`https://striveschool-api.herokuapp.com/api/product/`, {
-    method: `POST`,
+  fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
+    method: method,
     body: JSON.stringify(obj),
     headers: { "Content-type": "application/json", Authorization: apiKey },
   })
