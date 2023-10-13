@@ -18,7 +18,7 @@ const generateEventDetails = function (events) {
         <div class="card-body position-relative ">
       <h3 class="mb-4" id="title" class="card-title">${events.name}</h3>
       <p id="description" class="card-text">${events.description}</p>
-      <a href="./Back-Office.html?_id=${eventId}" class="btn btn-primary">MODIFICA</a>
+      <a href="./Back-Office.html?_id=${events._id}" class="btn btn-primary">MODIFICA</a>
       <button type="button" onclick="deleteEvent()" class="my-3 btn btn-primary">ELIMINA</button>
         <div class="position-absolute bottom-0 end-0 mb-2 me-2">
       

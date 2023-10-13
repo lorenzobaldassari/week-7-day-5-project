@@ -1,4 +1,4 @@
-@media screen and (max-width : 576px) {
+@media screen and (max-width: 576px) {
   /* .box {
     height: 750px !important;
     
@@ -8,31 +8,26 @@
   }
 }
 
-@media screen and (min-width:576px) {
+@media screen and (min-width: 576px) {
   .box {
     height: 630px !important;
   }
   .imgBox {
     height: 350px !important;
-    
   }
 }
 
-@media screen and (min-Width:768px) {
+@media screen and (min-width: 768px) {
   .box {
     height: 630px !important;
   }
   .imgBox {
     height: 300px !important;
   }
-
 }
-@media screen and (min-Width:992px) {
-
-
-
+@media screen and (min-width: 992px) {
 }
-@media screen and (min-Width:1200px) {
+@media screen and (min-width: 1200px) {
   .box {
     height: 650px !important;
   }
@@ -40,13 +35,35 @@
     height: 300px !important;
   }
 }
- body{
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ud6VxStjD21qdm-oZIyj1I2298v6DjZH3Q&usqp=CAU)!important;
+body {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ud6VxStjD21qdm-oZIyj1I2298v6DjZH3Q&usqp=CAU) !important;
   /* color: yellow; */
- }
+}
 
- .hover:hover{
+.hover:hover {
   transform: scale(1.2);
   z-index: 2;
   border: 4px solid rgb(201, 173, 14);
- }  
+}
+
+.XBOX {
+  background-color: green;
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+.PLAYSTATION {
+  color: white;
+  background-color:blue;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+.STEAM {
+  background-color: rgb(6, 6, 66);
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 50px;
+}

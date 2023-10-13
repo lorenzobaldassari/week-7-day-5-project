@@ -29,7 +29,7 @@ const getElement = function (api, apikey) {
         <div class="">
         <img id="cardimage" src="${events[i].imageUrl}" class="card-img-top imgBox  " alt="...">
         </div>
-        <h6 id="brand class"bg-warning" class="text-center mt-2 mb-1"> ${events[i].brand}</h6>
+        <h6 id="brand class"bg-warning" class="text-center mt-2 mb-1 ${events[i].brand}"> ${events[i].brand}</h6>
         <div class="card-body position-relative card-title d-flex flex-column justify-content-between align-items-start ">
       <h3  id="title" class="mb-4">${events[i].name}</h3>
       <p id="description" class="card-text">${events[i].description}</p>
