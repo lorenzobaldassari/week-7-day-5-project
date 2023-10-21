@@ -10,6 +10,13 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="assets/homecss.css" />
   </head>
   <body>
@@ -51,19 +58,32 @@
               </li>
             </ul>
           </div>
+          <div class="cartBox">
+            <div class="position-relative text-danger fw-bold fs-3">
+              <p id="counter" class="position-absolute">0</p>
+              <i
+                id="cartIcon"
+                class="fa-3x fas fa-shopping-cart position-absolute text-dark"
+              ></i>
+            </div>
+
+            <div id="cartPosition" class="d-flex flex-column align-itmes-start">
+              <p>totale carrello <span id="tot">0 </span></p>
+            </div>
+          </div>
         </div>
       </nav>
       <!-- FINE NAVBAR -->
     </header>
     <div class="">
-      <h1 class="text-center">CUDOZON - Shopping online</h1>
-      <p class="fs-5 fw-semibold text-center">
+      <h1 class="text-center fw-bold">CUDOZON - Shopping online</h1>
+      <p class="fs-5 fw-bold text-center">
         scegli tra una vasto catalogo di videogiochi online
       </p>
     </div>
 
-    <div class="container-fluid w-100 d-flex justify-content-center">
-      <div id="rowPosition" class="row w-100 g-3"></div>
+    <div class="container-fluid w-100 d-flex justify-content-center mt-5">
+      <div id="rowPosition" class="row w-100 g-2"></div>
     </div>
 
     <footer
