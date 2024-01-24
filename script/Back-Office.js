@@ -1,7 +1,10 @@
+
+
+
 const form = document.getElementById(`form`);
 
-const apiAddress = `https://striveschool-api.herokuapp.com/api/product/`;
-const apiKey = `bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI4ZWUxZTEzOWM0MzAwMTg4MTQ1NjEiLCJpYXQiOjE2OTcxODEyMTQsImV4cCI6MTY5ODM5MDgxNH0.wbkCpZIlzCh6r9Ncz_8mFwOOywnSEBiR4it3uPbRXUA`;
+const apiAddress = `http://localhost:3010/videogames/`;
+const apiKey = `bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNhOTEzMmY2ZTNkZDAwMTQ5NWU1YTEiLCJpYXQiOjE2OTgzMzcwNzQsImV4cCI6MTY5OTU0NjY3NH0.Atbr9XQiMvBwlBzqmbkbygfn5ZX7gaZa7KDcvGF4gPU`;
 const formReference = document.getElementById(`form3`);
 const button = document.getElementById(`submitButton`);
 const brand1 = document.getElementById(`brand`);
@@ -13,11 +16,8 @@ const addresBarContent = new URLSearchParams(location.search);
 const eventId = addresBarContent.get(`_id`);
 
 if (eventId) {
-  fetch(`https://striveschool-api.herokuapp.com/api/product/${eventId}`, {
-    method: `GET`,
-    headers: {
-      Authorization: apiKey,
-    },
+  fetch(apiAddress+eventId, {
+    method: `GET`
   })
     .then((res) => {
       return res.json();
@@ -66,10 +66,10 @@ button.addEventListener(`click`, function (e) {
   // console.log(obj);
 
   // inizio fetch
-  fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
+  fetch(apiAddress+id, {
     method: method,
     body: JSON.stringify(obj),
-    headers: { "Content-type": "application/json", Authorization: apiKey },
+    headers: { "Content-type": "application/json" },
   })
     .then((events) => {
       console.log(`oggetto inviato`, events);

@@ -1,13 +1,10 @@
-const apiAddress = `https://striveschool-api.herokuapp.com/api/product/`;
-const apiKey = `bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI4ZWUxZTEzOWM0MzAwMTg4MTQ1NjEiLCJpYXQiOjE2OTcxODEyMTQsImV4cCI6MTY5ODM5MDgxNH0.wbkCpZIlzCh6r9Ncz_8mFwOOywnSEBiR4it3uPbRXUA`;
+const apiAddress = `http://localhost:3010/videogames/`;
+const apiKey = `bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNhOTEzMmY2ZTNkZDAwMTQ5NWU1YTEiLCJpYXQiOjE2OTgzMzcwNzQsImV4cCI6MTY5OTU0NjY3NH0.Atbr9XQiMvBwlBzqmbkbygfn5ZX7gaZa7KDcvGF4gPU`;
 const rowPosition = document.getElementById(`rowPosition`);
 
 const getElement = function (api, apikey) {
   // inizio fetch
   fetch(api, {
-    headers: {
-      Authorization: apikey,
-    },
   })
     //   fine fetch
     .then((res) => {
@@ -21,15 +18,15 @@ const getElement = function (api, apikey) {
     .then((events) => {
       // generateElement(events);
 
-      for (i = 0; i < events.length; i++) {
-        console.log(events[i]._id);
+      for (let i = 0; i < events.length; i++) {
+        console.log(events[i].id);
 
         if (events[i].price === 0) {
           events[i].price = `Gratis`;
         }
         const col = document.createElement(`div`);
         col.classList.add(`col-sm-6`, `col-md-4`, `col-lg-3`, `col-xxl-2`);
-        col.innerHTML = `<div onmouseenter="over(event)" onmouseleave="leave(event)" class="hover  card  box m-0 p-0">
+        col.innerHTML = `<div id="kk"  class="hover  card  box m-0 p-0">
         <div class="">
         <img id="cardimage" src="${events[i].imageUrl}" class="card-img-top imgBox  " alt="...">
         </div>
@@ -38,8 +35,7 @@ const getElement = function (api, apikey) {
       <h3  id="title" class="mb-4 fw-bold ">${events[i].name}</h3>
       <p id="description" class="card-text">${events[i].description}</p>
       <div class="d-flex">
-      <a href="./details.html?_id=${events[i]._id}" class="btn btn-primary">Details</a>
-      <button type="button" class="ms-2 btn btn-success" onclick="addToChart(event)">Cart</button>
+      <a href="./details.html?_id=${events[i].id}" class="btn btn-primary">Details</a>
       </div>
         <div class="position-absolute bottom-0 end-0 mb-2 me-2">
        
@@ -49,6 +45,7 @@ const getElement = function (api, apikey) {
         </div>`;
 
         rowPosition.appendChild(col);
+        find();
       }
     })
     .catch((err) => {
@@ -71,7 +68,6 @@ const getElement = function (api, apikey) {
 //   </div>`;
 //   rowPosition.appendChild(col);
 // };
-getElement(apiAddress, apiKey);
 
 const over = function (event) {
   // event.target.children[2].children[3].children[0].style.color = `red`;
@@ -123,3 +119,10 @@ const addToChart = function (e) {
     console.log(e.target.parentElement);
   });
 };
+
+const find=()=>{
+  const a=document.getElementById("kk");
+  a.addEventListener("mouseenter",over)
+  a.addEventListener("mouseleave",leave)
+}
+getElement(apiAddress, apiKey);
